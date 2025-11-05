@@ -1,0 +1,16 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlill83cllkx6"]
+
+[ext_resource type="Script" uid="uid://c36w6k2npg0jq" path="res://tools/BuildingGenerator/BuildingGenerator.cs" id="1_mabwc"]
+[ext_resource type="PackedScene" uid="uid://ctfxwpu1td70v" path="res://meshes/buildings/building_01/ground_floors/ground_floor_01.tscn" id="2_mabwc"]
+[ext_resource type="PackedScene" uid="uid://rmaiu5586x16" path="res://meshes/buildings/building_01/ground_floors/ground_floor_02.tscn" id="3_54oni"]
+[ext_resource type="PackedScene" uid="uid://bm7d4d0k5mr6w" path="res://meshes/buildings/building_01/floors/floor_01.tscn" id="4_5bt1u"]
+[ext_resource type="PackedScene" uid="uid://nw0vk8xv1a1y" path="res://meshes/buildings/building_01/floors/floor_02.tscn" id="5_g5xpb"]
+[ext_resource type="PackedScene" uid="uid://c7upsnbxktjvb" path="res://meshes/buildings/building_01/roofs/roof_01.tscn" id="6_qfi5e"]
+[ext_resource type="PackedScene" uid="uid://b12qayjwu0430" path="res://meshes/buildings/building_01/roofs/roof_02.tscn" id="7_ampgb"]
+[ext_resource type="PackedScene" uid="uid://bxhcuc7nyx6mx" path="res://meshes/buildings/building_01/roofs/roof_03.tscn" id="8_fkvqe"]
+
+[node name="BuildingGenerator" type="Node3D"]
+script = ExtResource("1_mabwc")
+_groundFloorPrefabs = [ExtResource("2_mabwc"), ExtResource("3_54oni")]
+_midFloorPrefabs = [ExtResource("4_5bt1u"), ExtResource("5_g5xpb")]
+_roofPrefabs = [ExtResource("6_qfi5e"), ExtResource("7_ampgb"), ExtResource("8_fkvqe")]

@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "buildings-generator-poc", "buildings-generator-poc.csproj", "{199AE171-7D37-4CE5-8515-1AC22A4A0088}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{199AE171-7D37-4CE5-8515-1AC22A4A0088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199AE171-7D37-4CE5-8515-1AC22A4A0088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{199AE171-7D37-4CE5-8515-1AC22A4A0088}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{199AE171-7D37-4CE5-8515-1AC22A4A0088}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{199AE171-7D37-4CE5-8515-1AC22A4A0088}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{199AE171-7D37-4CE5-8515-1AC22A4A0088}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
