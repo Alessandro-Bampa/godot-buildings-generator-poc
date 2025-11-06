@@ -17,3 +17,7 @@ config/icon="res://icon.svg"
 [dotnet]
 
 project/assembly_name="buildings-generator-poc"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/building_tool/plugin.cfg")

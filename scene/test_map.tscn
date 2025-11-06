@@ -1,0 +1,355 @@
+[gd_scene load_steps=12 format=3 uid="uid://38q0eojcnyk3"]
+
+[ext_resource type="Script" uid="uid://methj4y3y5d" path="res://addons/building_tool/mesh_generator/PathGeneratorTool.cs" id="1_mbcbn"]
+[ext_resource type="PackedScene" uid="uid://dlill83cllkx6" path="res://addons/building_tool/building_generator/BuildingGenerator.tscn" id="2_g2q8l"]
+[ext_resource type="Script" uid="uid://c36w6k2npg0jq" path="res://addons/building_tool/building_generator/BuildingGenerator.cs" id="3_r885g"]
+[ext_resource type="PackedScene" uid="uid://ctfxwpu1td70v" path="res://meshes/buildings/building_01/ground_floors/ground_floor_01.tscn" id="4_4io6j"]
+[ext_resource type="PackedScene" uid="uid://rmaiu5586x16" path="res://meshes/buildings/building_01/ground_floors/ground_floor_02.tscn" id="5_21fjt"]
+[ext_resource type="PackedScene" uid="uid://bm7d4d0k5mr6w" path="res://meshes/buildings/building_01/floors/floor_01.tscn" id="6_hu0gd"]
+[ext_resource type="PackedScene" uid="uid://nw0vk8xv1a1y" path="res://meshes/buildings/building_01/floors/floor_02.tscn" id="7_yctc1"]
+[ext_resource type="PackedScene" uid="uid://c7upsnbxktjvb" path="res://meshes/buildings/building_01/roofs/roof_01.tscn" id="8_55prm"]
+[ext_resource type="PackedScene" uid="uid://b12qayjwu0430" path="res://meshes/buildings/building_01/roofs/roof_02.tscn" id="9_lttm1"]
+[ext_resource type="PackedScene" uid="uid://bxhcuc7nyx6mx" path="res://meshes/buildings/building_01/roofs/roof_03.tscn" id="10_sirqe"]
+
+[sub_resource type="Curve3D" id="Curve3D_mbcbn"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -20.286, 0, -7.038, 0, 0, 0, 0, 0, 0, 286.822, 0, 19.415),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="TestMap" type="Node3D"]
+
+[node name="PathGeneratorTool" type="Node3D" parent="."]
+script = ExtResource("1_mbcbn")
+_pathNodePath = NodePath("../Path3D")
+_buildingGeneratorScene = ExtResource("2_g2q8l")
+metadata/_custom_type_script = "uid://methj4y3y5d"
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_mbcbn")
+
+[node name="@PathFollow3D@25140" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581802, 0, -0.9963108, 0, 1, 0, 0.9963108, 0, -0.08581802, -14.84117, 0, -6.5690055)
+progress = 5.4650707
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25140" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25143" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, -2.9550908, 0, -5.545187)
+progress = 17.395212
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25143" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25147" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581802, 0, -0.9963108, 0, 1, 0, 0.9963108, 0, -0.08581802, 8.931086, 0, -4.5213623)
+progress = 29.325354
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25147" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25149" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 20.817284, 0, -3.497535)
+progress = 41.255493
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25149" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25154" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 32.703312, 0, -2.4737215)
+progress = 53.18564
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25154" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25158" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 44.589474, 0, -1.449898)
+progress = 65.115776
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25158" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25160" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 56.475643, 0, -0.42607218)
+progress = 77.04592
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25160" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25162" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 68.36173, 0, 0.59774595)
+progress = 88.97606
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25162" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25167" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 80.24794, 0, 1.6215725)
+progress = 100.906204
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25167" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25171" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 92.13403, 0, 2.6453922)
+progress = 112.83635
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25171" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25175" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 104.020164, 0, 3.6692147)
+progress = 124.766495
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25175" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25179" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581802, 0, -0.9963108, 0, 1, 0, 0.9963108, 0, -0.08581802, 115.90631, 0, 4.693037)
+progress = 136.69664
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25179" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25181" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 127.79247, 0, 5.716862)
+progress = 148.62679
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25181" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25185" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 139.67868, 0, 6.7406898)
+progress = 160.55693
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25185" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25187" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 151.56474, 0, 7.7645063)
+progress = 172.48708
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25187" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25189" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 163.45094, 0, 8.788334)
+progress = 184.41722
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25189" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25193" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 175.3371, 0, 9.812156)
+progress = 196.34737
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25193" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25197" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 187.22322, 0, 10.8359785)
+progress = 208.27751
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25197" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25200" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581802, 0, -0.9963108, 0, 1, 0, 0.9963108, 0, -0.08581802, 199.10938, 0, 11.859801)
+progress = 220.20766
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25200" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25202" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 210.99551, 0, 12.883625)
+progress = 232.1378
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25202" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25204" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 222.88164, 0, 13.907447)
+progress = 244.06795
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25204" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25207" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 234.76779, 0, 14.931269)
+progress = 255.9981
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25207" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25210" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 246.65382, 0, 15.955082)
+progress = 267.92822
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25210" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25212" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581802, 0, -0.9963108, 0, 1, 0, 0.9963108, 0, -0.08581802, 258.54, 0, 16.978909)
+progress = 279.85837
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25212" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]
+
+[node name="@PathFollow3D@25215" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.08581789, 0, -0.9963106, 0, 1, 0, 0.9963106, 0, -0.08581789, 270.42618, 0, 18.002735)
+progress = 291.7885
+rotation_mode = 1
+loop = false
+
+[node name="BuildingGenerator" type="Node3D" parent="Path3D/@PathFollow3D@25215" instance=ExtResource("2_g2q8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("3_r885g")
+_groundFloorPrefabs = [ExtResource("4_4io6j"), ExtResource("5_21fjt")]
+_midFloorPrefabs = [ExtResource("6_hu0gd"), ExtResource("7_yctc1")]
+_roofPrefabs = [ExtResource("8_55prm"), ExtResource("9_lttm1"), ExtResource("10_sirqe")]

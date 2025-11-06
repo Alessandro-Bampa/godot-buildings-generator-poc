@@ -1,12 +1,26 @@
-[gd_scene format=3 uid="uid://c7upsnbxktjvb"]
+[gd_scene load_steps=3 format=3 uid="uid://c7upsnbxktjvb"]
 
-[node name="CSGBox3D" type="CSGBox3D"]
-size = Vector3(11, 0.5, 11)
+[ext_resource type="Script" uid="uid://bae27xtnou8ai" path="res://addons/building_tool/building_generator/BuildingPiece.cs" id="1_jt61w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yy8ag"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(11, 0.5, 11)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7519631, 0.71906364, -3.6189418)
 size = Vector3(0.44970703, 1, 0.60461426)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7519631, 1.6789445, -3.6189418)
 size = Vector3(0.44970703, 1, 0.60461426)
+
+[node name="BuildingPiece" type="Node" parent="."]
+script = ExtResource("1_jt61w")
+Dimensions = Vector3(11, 2.4289446, 11)
+metadata/_custom_type_script = "uid://bae27xtnou8ai"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_yy8ag")

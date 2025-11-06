@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dlill83cllkx6"]
 
-[ext_resource type="Script" uid="uid://c36w6k2npg0jq" path="res://tools/BuildingGenerator/BuildingGenerator.cs" id="1_mabwc"]
+[ext_resource type="Script" uid="uid://c36w6k2npg0jq" path="res://addons/building_tool/building_generator/BuildingGenerator.cs" id="1_mabwc"]
 [ext_resource type="PackedScene" uid="uid://ctfxwpu1td70v" path="res://meshes/buildings/building_01/ground_floors/ground_floor_01.tscn" id="2_mabwc"]
 [ext_resource type="PackedScene" uid="uid://rmaiu5586x16" path="res://meshes/buildings/building_01/ground_floors/ground_floor_02.tscn" id="3_54oni"]
 [ext_resource type="PackedScene" uid="uid://bm7d4d0k5mr6w" path="res://meshes/buildings/building_01/floors/floor_01.tscn" id="4_5bt1u"]

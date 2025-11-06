@@ -1,60 +1,74 @@
-[gd_scene format=3 uid="uid://ctfxwpu1td70v"]
+[gd_scene load_steps=3 format=3 uid="uid://ctfxwpu1td70v"]
 
-[node name="CSGBox3D" type="CSGBox3D"]
-size = Vector3(10, 3, 10)
+[ext_resource type="Script" uid="uid://bae27xtnou8ai" path="res://addons/building_tool/building_generator/BuildingPiece.cs" id="1_irn2x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k80jq"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32226563, 0)
-operation = 2
-size = Vector3(9, 2.6367188, 9)
+size = Vector3(10, 3, 10)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25683594, 0)
+operation = 2
+size = Vector3(9, 2.5058594, 9)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1542342, -4.800486)
 operation = 2
 size = Vector3(1, 2.3, 1)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.728579, 0.4109562, -4.8512983)
 operation = 2
 size = Vector3(1, 1.654419, 1)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6854162, 0.4109562, -4.8512983)
 operation = 2
 size = Vector3(1, 1.654419, 1)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5722327, 0.4109562, -4.8512983)
 operation = 2
 size = Vector3(1, 1.654419, 1)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4945402, 0.4109562, -4.8512983)
 operation = 2
 size = Vector3(1, 1.654419, 1)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7340016, 0.4109562, -0.17361975)
 operation = 2
 size = Vector3(1, 1.654419, 4.6191406)
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5395265, 0.4109562, -0.17361975)
 operation = 2
 size = Vector3(1, 1.654419, 4.6191406)
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0006916523, -1.0450635, -5.178859)
 size = Vector3(1, 0.10888672, 0.35009766)
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0006916523, -1.155474, -5.286159)
 size = Vector3(1, 0.10888672, 0.56469727)
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0006916523, -1.2702714, -5.3808246)
 size = Vector3(1, 0.10888672, 0.7540283)
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0006916523, -1.4113376, -5.4669757)
 size = Vector3(1, 0.16723633, 0.92633057)
+
+[node name="BuildingPiece" type="Node" parent="."]
+script = ExtResource("1_irn2x")
+Dimensions = Vector3(10, 3, 10.930141)
+metadata/_custom_type_script = "uid://bae27xtnou8ai"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_k80jq")
